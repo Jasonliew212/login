@@ -5,13 +5,25 @@
     </label>
 </template>
 
-<script setup>
-defineProps({
-  modelValue: String,
-  type: String,
-  placeholder: String,
-})
-defineEmits(['update:modelValue'])
+<script>
+export default {
+  name: 'CustomCheckBox',
+  props: {
+    modelValue: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: 'text'
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    }
+  },
+  emits: ['update:modelValue']
+}
 </script>
 
 <style>

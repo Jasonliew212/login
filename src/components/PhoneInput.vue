@@ -14,16 +14,25 @@
 </template>
 
 
-<script setup>
-import { ref } from 'vue'
+<script>
 import countries from '@/assets/json/countriesCode.json'
 
-const countryCode = ref('+60')
-const phoneNumber = ref('')
-const isClicked = ref(false)
-const requestOtp = () => {
-  alert(`Requesting OTP for ${countryCode.value} ${phoneNumber.value}`)
-  isClicked.value = true
+export default {
+  name: 'PhoneInput',
+  data() {
+    return {
+      countryCode: '+60',
+      phoneNumber: '',
+      isClicked: false,
+      countries
+    }
+  },
+  methods: {
+    requestOtp() {
+      alert(`Requesting OTP for ${this.countryCode} ${this.phoneNumber}`);
+      this.isClicked = true;
+    }
+  }
 }
 </script>
 
@@ -118,6 +127,7 @@ button.clicked {
   margin-block: auto;
   margin-right: 5px;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .otp-button:hover {

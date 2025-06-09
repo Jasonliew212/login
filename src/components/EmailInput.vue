@@ -13,20 +13,35 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-const isClicked = ref(false)
-
-const props = defineProps({
-  modelValue: String,
-  type: String,
-  placeholder: String,
-})
-defineEmits(['update:modelValue'])
-
-const requestOtp = () => {
-  alert(`Requesting OTP for ${props.modelValue}`)
-  isClicked.value = true
+<script>
+export default {
+  name: 'EmailInput',
+  props: {
+    modelValue: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: 'text'
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    }
+  },
+  emits: ['update:modelValue'],
+  data() {
+    return {
+      isClicked: false
+    };
+  },
+  methods: {
+    requestOtp() {
+      alert(`Requesting OTP for ${this.modelValue}`);
+      this.isClicked = true;
+    }
+  }
 }
 </script>
 
@@ -103,6 +118,7 @@ button.clicked{
   margin-right: 5px;
   text-overflow: ellipsis;
   white-space: nowrap;
+  z-index: 2;
 }
 
 .otp-button:hover {

@@ -32,7 +32,6 @@ import { onMounted, ref } from 'vue'
 import InputFieldOtp from '@/components/InputFieldOtp.vue'
 
 const otp = ref('')
-const timer = ref('')
 const isClickable = ref(true);
 const countdownValue = ref(60); // seconds
 const countdownTimer = ref(null);
@@ -156,7 +155,7 @@ a.disabled {
   position: absolute;
   height: auto;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 0;
 }
 .edge-image.top{
   width: 300px;

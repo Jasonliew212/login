@@ -21,9 +21,9 @@
           placeholder="Password"
           v-model="password"
         />
-        <span class="toggle-password" @click="showPassword = !showPassword">
+        <div class="toggle-password" @click="showPassword = !showPassword">
           <img :src="require(showPassword ? '@/assets/image/eye.svg' : '@/assets/image/eye-off.svg')" width="15px"/>
-        </span>
+        </div>
       </div>
 
       <div class="forgot-link">
@@ -40,13 +40,22 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script>
 import InputField from '@/components/InputField.vue'
 
-const username = ref('')
-const password = ref('')
-const showPassword = ref(false)
+export default {
+  name:'SignIn',
+  components: {
+    InputField
+  },
+  data() {
+    return {
+      username: '',
+      password: '',
+      showPassword: false
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -154,7 +163,7 @@ button{
   position: absolute;
   height: auto;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 0;
 }
 .edge-image.top{
   width: 300px;

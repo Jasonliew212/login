@@ -3,7 +3,7 @@
     <input
       v-for="(digit, index) in otp"
       :key="index"
-      ref="otpRefs"
+      :ref="setOtpRef"
       :type="type"
       v-model="otp[index]"
       @input="onInput($event, index)"
@@ -14,57 +14,67 @@
   </div>
 </template>
 
-<script setup>
-import { ref, watch, onMounted } from 'vue'
-
-const props = defineProps({
-  modelValue: String,
-  type: {
-    type: String,
-    default: 'text',
+<script>
+export default {
+  name: 'InputFieldOtp',
+  props: {
+    modelValue: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: 'text'
+    }
   },
-})
+  emits: ['update:modelValue'],
+  data() {
+    return {
+      otp: Array(6).fill(''),
+      otpRefs: []
+    };
+  },
+  mounted() {
+    if (this.otpRefs[0]) {
+      this.otpRefs[0].focus();
+    }
+  },
+  watch: {
+    otp: {
+      deep: true,
+      handler(newOtp) {
+        this.$emit('update:modelValue', newOtp.join(''));
+      }
+    }
+  },
+  methods: {
+    setOtpRef(el) {
+      if (el && !this.otpRefs.includes(el)) {
+        this.otpRefs.push(el)
+      }
+    },
+    onInput(event, index) {
+      const val = event.target.value
+      if (!/^\d$/.test(val)) {
+        this.otp[index] = ''
+        return
+      }
 
-const emit = defineEmits(['update:modelValue'])
+      this.otp[index] = val
 
-// Array of 6 characters for the OTP digits
-const otp = ref(Array(6).fill(''))
-const otpRefs = ref([]) // Refs for each input field
-
-// Update modelValue whenever any digit changes
-watch(otp, (newOtp) => {
-  emit('update:modelValue', newOtp.join(''))
-})
-
-// Autofocus on the first input when mounted
-onMounted(() => {
-  otpRefs.value[0]?.focus()
-})
-
-// Move focus and validate digit
-function onInput(event, index) {
-  const val = event.target.value
-
-  // Only allow digits
-  if (!/^\d$/.test(val)) {
-    otp.value[index] = ''
-    return
-  }
-
-  // Move to next input
-  if (index < otpRefs.value.length - 1) {
-    otpRefs.value[index + 1]?.focus()
-  }
-}
-
-// Handle backspace
-function onBackspace(event, index) {
-  if (otp.value[index] === '') {
-    if (index > 0) {
-      otpRefs.value[index - 1]?.focus()
+      if (index < this.otpRefs.length - 1) {
+        this.otpRefs[index + 1]?.focus()
+      }
+    },
+    onBackspace(event, index) {
+      if (this.otp[index] === '') {
+        if (index > 0) {
+          this.otpRefs[index - 1]?.focus()
+        }
+      }
     }
   }
-}
+};
 </script>
 
 <style scoped>

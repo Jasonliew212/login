@@ -72,42 +72,53 @@
   </div>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
+<script>
 import InputField from '@/components/InputField.vue'
 import PhoneInput from '@/components/PhoneInput.vue'
 import EmailInput from '@/components/EmailInput.vue'
 import Checkbox from '@/components/CustomCheckBox.vue'
 
-const username = ref('')
-const password = ref('')
-const confirmPassword = ref('')
-const otp = ref('')
-const optIn = ref(false)
-const showPassword = ref(false)
-const isMobile = ref(false)
-const showConfirmPassword = ref(false)
-const selectedTab = ref('mobile')
-const email = ref('')
-const fileInput = ref(null)
-const imageUrl = ref(require('@/assets/image/camera-plus.svg'))
-
-onMounted(() => {
-  isMobile.value = window.innerWidth <= 768
-})
-
-const triggerFileUpload = () => {
-  fileInput.value.click()
-}
-
-const handleFileUpload = (event) => {
-  const file = event.target.files[0]
-  if (file) {
-    const reader = new FileReader()
-    reader.onload = () => {
-      imageUrl.value = reader.result
+export default {
+  name: 'SignUp',
+  components: {
+    InputField,
+    PhoneInput,
+    EmailInput,
+    Checkbox
+  },
+  data() {
+    return {
+      username: '',
+      password: '',
+      confirmPassword: '',
+      otp: '',
+      optIn: false,
+      showPassword: false,
+      isMobile: false,
+      showConfirmPassword: false,
+      selectedTab: 'mobile',
+      email: '',
+      fileInput: null,
+      imageUrl: require('@/assets/image/camera-plus.svg')
     }
-    reader.readAsDataURL(file)
+  },
+  mounted() {
+    this.isMobile = window.innerWidth <= 768
+  },
+  methods: {
+    triggerFileUpload() {
+      this.$refs.fileInput.click()
+    },
+    handleFileUpload(event) {
+      const file = event.target.files[0]
+      if (file) {
+        const reader = new FileReader()
+        reader.onload = () => {
+          this.imageUrl = reader.result
+        }
+        reader.readAsDataURL(file)
+      }
+    }
   }
 }
 </script>
@@ -127,7 +138,7 @@ const handleFileUpload = (event) => {
   position: absolute;
   height: auto;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 0;
 }
 .edge-image.top{
   width: 300px;
