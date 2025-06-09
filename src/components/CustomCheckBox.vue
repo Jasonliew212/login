@@ -61,7 +61,7 @@ export default {
   top: 1px;
   width: 4px;
   height: 8px;
-  border: solid white;
+  border: solid #CAE6FF;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }

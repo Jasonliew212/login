@@ -6,7 +6,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-image: url("@/assets/image/Rectangle551.png");
+  background-image: url('@public/image/Rectangle551.png');
   background-repeat: no-repeat;
   background-size: cover; /* or 'contain' or specific size */
   background-position: center;
@@ -18,7 +18,7 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background-image: url("@/assets/image/image18.png");
+  background-image: url("@public/image/image18.png");
   background-repeat: no-repeat;
   background-position: top right;
   height: 100%;

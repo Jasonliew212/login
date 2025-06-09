@@ -1,6 +1,6 @@
 <template>
   <div class="signUp">
-    <img src="@\assets\image\logo.png">
+    <img src="@public\image\logo.png">
     <signUp/>
   </div>
 </template>

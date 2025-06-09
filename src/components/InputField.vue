@@ -40,32 +40,27 @@ export default {
   width: 90%;
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: white;
-  font-size: 0.85rem;
-  outline: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-.input-field-otp {
-  width: 90%;
-  padding: 0.6rem 1rem;
-  border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: white;
-  font-size: 0.85rem;
+  background-color: #206997;
+  border: #0C73C9 1px solid;
+  color: #CAE6FF;
+  font-size: 10px;
   outline: none;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .input-field::placeholder {
-  color: rgba(139, 191, 214, 0.7);
+  color: #6FA4D3;
 }
 
 .input-field:focus {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: #206997;
   box-shadow: 0 0 0 2px rgba(100, 149, 237, 0.5);
+}
+
+@media (min-width: 768px) {
+  .input-field{
+    font-size: 14px;
+  }
 }
 
 </style>

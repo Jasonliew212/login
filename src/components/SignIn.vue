@@ -1,10 +1,10 @@
 <template>
   <div class="gradient-border">
-    <img src="@/assets/image/image16.png" class="edge-image top">
-    <img src="@/assets/image/image16-2.png" class="edge-image right">
+    <img src="@public/image/image16.png" class="edge-image top">
+    <img src="@public/image/image16-2.png" class="edge-image right">
     <div class="login-container">
-      <div style="height: 40%; align-content: center;">
-        <img src="@/assets/image/image20.png" alt="Login Icon" class="login-icon"/>
+      <div class="img-container">
+        <img src="@public/image/image20.png" alt="Login Icon" class="login-icon"/>
       </div>
       
       <h2 class="login-title font-color">Log In Your Account</h2>
@@ -22,7 +22,7 @@
           v-model="password"
         />
         <div class="toggle-password" @click="showPassword = !showPassword">
-          <img :src="require(showPassword ? '@/assets/image/eye.svg' : '@/assets/image/eye-off.svg')" width="15px"/>
+          <img :src="require(showPassword ? '@public/image/eye.svg' : '@public/image/eye-off.svg')" width="15px"/>
         </div>
       </div>
 
@@ -69,7 +69,7 @@ button{
   padding: 2px; /* This is the thickness of the border */
   border-radius: 2rem;
   width: 86%;
-  height: 580px;
+  height: 520px;
   margin: 4rem auto;
 }
 .login-container {
@@ -82,14 +82,6 @@ button{
   height: 100%;
   padding: 0% 10%;
 }
-@media (min-width: 768px) {
-  .gradient-border {
-    width: 464px;
-  }
-  .toggle-password {
-    right: 20px !important;
-  }
-}
 
 .login-icon {
   width: 70%;
@@ -98,9 +90,9 @@ button{
 }
 
 .login-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 140%;
   justify-self: left;
 }
 
@@ -121,20 +113,21 @@ button{
 .toggle-password {
   position: absolute;
   right: 10px;
-  top: 12px;
+  top: 8px;
   cursor: pointer;
   font-size: 1rem;
 }
 
 .forgot-link {
   text-align: right;
-  font-size: 0.85rem;
-  margin-top: -0.5rem;
+  font-size: 8px;
+  line-height: 140%;
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
 .forgot-link a {
-  color: #2e91d1;
+  color: #6F9FC9;
   text-decoration: underline;
 }
 
@@ -144,19 +137,19 @@ button{
   border: none;
   border-radius: 6px;
   padding: 0.6rem;
-  font-size: 1rem;
+  font-size: 10px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .signup-text {
-  margin-top: 1rem;
-  font-size: 0.7rem;
-  color: #2e91d1;
+  color: #6F9FC9;
+  font-size: 8px;
+  line-height: 140%;
 }
 
 .signup-text a {
-  color: #2e91d1;
+  color: #6F9FC9;
   text-decoration: underline;
 }
 .edge-image {
@@ -176,6 +169,41 @@ button{
   height: 300px;
 }
 .font-color{
-  color: #cff2ff;
+  color: #CAE6FF;
+}
+.img-container{
+  height: 45%;
+  align-content: center;
+}
+
+@media (min-width: 768px) {
+  .gradient-border {
+    width: 464px;
+    height: 580px;
+  }
+  .toggle-password {
+    right: 20px !important;
+  }
+  .login-title{
+    font-size: 24px;
+  }
+  .toggle-password{
+    top: 12px;
+  }
+  .signup-text{
+    font-size: 12px;
+  }
+  .forgot-link{
+    font-size: 14px;
+  }
+  .login-button{
+    font-size: 16px;
+  }
+  .img-container{
+    height: 40%;
+  }
+  .login-icon{
+    width: 60%;
+  }
 }
 </style>

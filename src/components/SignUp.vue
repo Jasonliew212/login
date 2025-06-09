@@ -1,7 +1,7 @@
 <template>
   <div class="gradient-border">
-    <img src="@/assets/image/image16.png" class="edge-image top">
-    <img src="@/assets/image/image16-2.png" class="edge-image right">
+    <img src="@public/image/image16.png" class="edge-image top">
+    <img src="@public/image/image16-2.png" class="edge-image right">
     <div class="register-card">
       <h2 class="register-title font-color nowrap">Create Your Account</h2>
       <div style="width: 100%; display: flex;">
@@ -20,7 +20,7 @@
           v-model="password"
         />
         <span class="toggle-password" @click="showPassword = !showPassword">
-          <img :src="require(showPassword ? '@/assets/image/eye.svg' : '@/assets/image/eye-off.svg')" width="15px"/>
+          <img :src="require(showPassword ? '@public/image/eye.svg' : '@public/image/eye-off.svg')" width="15px"/>
         </span>
       </div>
       <div class="password-field">
@@ -30,7 +30,7 @@
           v-model="confirmPassword"
         />
         <span class="toggle-password" @click="showConfirmPassword = !showConfirmPassword">
-          <img :src="require(showConfirmPassword ? '@/assets/image/eye.svg' : '@/assets/image/eye-off.svg')" width="15px"/>
+          <img :src="require(showConfirmPassword ? '@public/image/eye.svg' : '@public/image/eye-off.svg')" width="15px"/>
         </span>
       </div>
       <div class="otp-container">
@@ -99,7 +99,7 @@ export default {
       selectedTab: 'mobile',
       email: '',
       fileInput: null,
-      imageUrl: require('@/assets/image/camera-plus.svg')
+      imageUrl: require('@public/image/camera-plus.svg')
     }
   },
   mounted() {
@@ -131,7 +131,7 @@ export default {
   padding: 2px; /* This is the thickness of the border */
   border-radius: 2rem;
   width: 86%;
-  height: 580px;
+  height: 520px;
   margin: 4rem auto;
 }
 .edge-image {
@@ -164,14 +164,6 @@ export default {
 .uploadDiv{
   padding-left: 13%;
 }
-@media (min-width: 768px) {
-  .gradient-border {
-    width: 464px;
-  }
-  .uploadDiv{
-    padding-left: 10%;
-  }
-}
 
 .password-field {
   position: relative;
@@ -184,14 +176,13 @@ export default {
   font-size: 1rem;
 }
 .register-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  text-align: left;
-  margin-top: 0px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 140%;
+  justify-self: left;
 }
 .upload-title{
-  font-size: 0.7rem;
+  font-size: 8.75px;
   align-content: center;
   justify-content: center;
 }
@@ -213,7 +204,7 @@ export default {
   color: rgba(139, 191, 214, 0.7);
   cursor: pointer;
   background-color: rgba(30, 58, 138, 0);
-  font-size: 0.75rem;
+  font-size: 8px;
 }
 
 .otp-tabs button.active {
@@ -222,20 +213,13 @@ export default {
   color: #cff2ff;
 }
 
-.OTP-title {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
 .checkbox-label {
   display: flex;
   text-align: left;
   align-items: center;
-  font-size: 0.65rem;
+  font-size: 8px;
   margin-bottom: 1rem;
 }
-
-
 
 .register-button {
   width: 100%;
@@ -244,7 +228,7 @@ export default {
   border: none;
   border-radius: 0.5rem;
   color: white;
-  font-size: 1rem;
+  font-size: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -255,7 +239,7 @@ export default {
 
 .login-link {
   margin-block: 1rem;
-  font-size: 0.8rem;
+  font-size: 8px;
   text-align: left;
 }
 
@@ -265,7 +249,7 @@ export default {
 
 .terms-text {
   margin-top: 1rem;
-  font-size: 0.7rem;
+  font-size: 8px;
   text-align: left;
 }
 
@@ -275,12 +259,36 @@ export default {
 }
 
 .font-color{
-  color: #cff2ff !important;
+  color: #CAE6FF !important;
 }
 .font-color2{
-  color: rgba(139, 191, 214, 0.7) !important;
+  color: #6FA4D3 !important;
 }
 .nowrap{
   white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .gradient-border {
+    width: 464px;
+    height: 580px;
+  }
+  .uploadDiv{
+    padding-left: 10%;
+  }
+  .otp-tabs button {
+    font-size: 14px;
+  }
+  .checkbox-label,
+  .login-link,
+  .terms-text {
+    font-size: 12px;
+  }
+  .register-button{
+    font-size: 16px;
+  }
+  .toggle-password{
+    right: 20px;
+  }
 }
 </style>

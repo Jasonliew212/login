@@ -94,8 +94,8 @@ export default {
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
-  color: white;
-  font-size: 0.85rem;
+  color: #CAE6FF;
+  font-size: 14px;
   outline: none;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
@@ -108,5 +108,10 @@ export default {
 .input-field:focus {
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 0 2px rgba(100, 149, 237, 0.5);
+}
+@media(min-width:768px){
+  .input-field{
+    font-size: 18px;
+  }
 }
 </style>

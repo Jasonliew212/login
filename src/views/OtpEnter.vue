@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="@\assets\image\logo.png">
+    <img src="@public/image/logo.png">
     <otpEnter/>
   </div>
 </template>

@@ -1,10 +1,10 @@
 <template>
   <div class="gradient-border">
-    <img src="@/assets/image/image16.png" class="edge-image top">
-    <img src="@/assets/image/image16-2.png" class="edge-image right">
+    <img src="@public/image/image16.png" class="edge-image top">
+    <img src="@public/image/image16-2.png" class="edge-image right">
     <div class="login-container">
       <div style="height: 40%; align-content: center;" class="img-container">
-        <img src="@/assets/image/image21.png" alt="Login Icon" class="login-icon"/>
+        <img src="@public/image/image21.png" alt="Login Icon" class="login-icon"/>
       </div>
       
       <h2 class="login-title font-color">OTP Verification</h2>
@@ -17,8 +17,8 @@
       </div>
       
 
-      <div class="font-color2">
-        Did't receive your OTP? <a @click="countDown" :class="{ disabled: !isClickable }" :style="{ pointerEvents: isClickable ? 'auto' : 'none', opacity: isClickable ? 1 : 0.8 }"> Resend OTP <span v-if="!isClickable">in <b> {{ countdownValue }}s</b></span></a>
+      <div class="font-color3">
+        Did't receive your OTP? <a @click="countDown" :class="{ disabled: !isClickable }" :style="{ pointerEvents: isClickable ? 'auto' : 'none', opacity: isClickable ? 1 : 0.8 }" class="font-color4"> Resend OTP <span v-if="!isClickable">in <b> {{ countdownValue }}s</b></span></a>
       </div>
 
       <button class="login-button">OK</button>
@@ -79,7 +79,7 @@ a.disabled {
   padding: 2px; /* This is the thickness of the border */
   border-radius: 2rem;
   width: 86%;
-  height: 580px;
+  height: 520px;
   margin: 4rem auto;
 }
 .login-container {
@@ -91,27 +91,6 @@ a.disabled {
   height: 100%;
   padding: 0% 10%;
 }
-@media (min-width: 768px) {
-  .gradient-border {
-    width: 464px;
-  }
-  .login-icon{
-    
-  }
-}
-.img-container{
-  padding-top: 10%;
-  padding-bottom: 5%;
-}
-@media (max-width:425px){
-  .img-container{
-    padding-top: 15%;
-    padding-bottom: 10%;
-  }
-  .login-icon{
-    width: 100% !important;
-  }
-}
 
 .login-icon {
   width: 70% ;
@@ -120,20 +99,10 @@ a.disabled {
 }
 
 .login-title {
-  font-size: 1.3rem;
+  font-size: 14px;
   font-weight: bold;
   margin-bottom: 1.5rem;
   justify-self: left;
-}
-
-.login-input {
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
 }
 
 .login-button {
@@ -142,7 +111,7 @@ a.disabled {
   border: none;
   border-radius: 6px;
   padding: 0.6rem;
-  font-size: 1rem;
+  font-size: 10px;
   cursor: pointer;
   transition: 0.3s;
   position: absolute;
@@ -168,13 +137,58 @@ a.disabled {
   height: 300px;
 }
 .font-color{
-  color: #cff2ff;
+  color: #CAE6FF;
 }
 .font-color2{
+  color: #CAE6FF;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 140%;
+  letter-spacing: 0%;
   justify-self: left;
-  color: #94bccb;
-  white-space: nowrap;
-  font-size: x-small;
-  align-self: left;
 }
+.font-color3{
+  justify-self: left;
+  color: #6F9FC9;
+  font-size: 8px;
+  line-height: 140%;
+  letter-spacing: 0%;
+}
+.font-color4{
+  color: #6DBBFF;
+}
+
+@media (min-width: 768px) {
+  .gradient-border {
+    width: 464px;
+    height: 580px;
+  }
+  .login-title{
+    font-size: 24px;
+  }
+  .login-button{
+    font-size: 16pxs;
+  }
+  .font-color2{
+    font-size: 14px;
+  }
+  .font-color3,
+  .font-color4{
+    font-size: 12px;
+  }
+}
+.img-container{
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+@media (max-width:425px){
+  .img-container{
+    padding-top: 15%;
+    padding-bottom: 10%;
+  }
+  .login-icon{
+    width: 80% !important;
+  }
+}
+
 </style>
