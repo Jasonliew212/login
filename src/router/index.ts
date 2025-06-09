@@ -3,29 +3,26 @@ import SignIn from '../views/SignIn.vue'
 import SignUp from '../views/SignUp.vue'
 import OTPEnter from '@/views/OtpEnter.vue'
 
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
-    path: '/',
+    path: '/sign-in',
     name: 'signin',
     component: SignIn
   },
   {
-    path: '/SignUp',
+    path: '/sign-up',
     name: 'signUp',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: SignUp
   },
   {
-    path: '/OtpEnter',
+    path: '/otp-enter',
     name: 'OTPEnter',
     component: OTPEnter
   },
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 })
 
