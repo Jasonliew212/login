@@ -79,6 +79,7 @@ a.disabled {
   padding: 2px; /* This is the thickness of the border */
   border-radius: 2rem;
   width: 86%;
+  max-width: 464px;
   height: 520px;
   margin: 4rem auto;
 }
@@ -94,6 +95,7 @@ a.disabled {
 
 .login-icon {
   width: 70% ;
+  max-width: 250px;
   margin: 0 auto 1rem;
   display: block;
 }

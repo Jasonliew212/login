@@ -131,6 +131,7 @@ export default {
   padding: 2px; /* This is the thickness of the border */
   border-radius: 2rem;
   width: 86%;
+  max-width: 464px;
   height: 520px;
   margin: 4rem auto;
 }

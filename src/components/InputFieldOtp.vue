@@ -91,6 +91,7 @@ export default {
   flex: 1;
   aspect-ratio: 1 / 1;
   min-width: 30px; /* Optional: cap max width */
+  max-width: 50px;
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
