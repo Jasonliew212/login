@@ -87,7 +87,7 @@ button.clicked{
 }
 .otp-button {
   padding-block: 8px;
-  background-color: #206997;
+  background-color: #1c5c84;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -103,7 +103,7 @@ button.clicked{
 }
 
 .otp-button:hover {
-  background-color: #1d4ed8;
+  background-color: #1c5c84;
 }
 
 @media (max-width: 425px){

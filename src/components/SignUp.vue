@@ -202,7 +202,7 @@ export default {
 .otp-tabs button {
   padding-top: 0.5rem;
   border: none;
-  color: rgba(139, 191, 214, 0.7);
+  color: #42729D;
   cursor: pointer;
   background-color: rgba(30, 58, 138, 0);
   font-size: 8px;
@@ -210,8 +210,8 @@ export default {
 
 .otp-tabs button.active {
   background-color: rgba(30, 58, 138, 0);
-  border-bottom: #d1d5db solid 1px;
-  color: #cff2ff;
+  border-bottom: #cff6ff solid 1px;
+  color: #cff6ff;
 }
 
 .checkbox-label {
@@ -290,6 +290,9 @@ export default {
   }
   .toggle-password{
     right: 20px;
+  }
+  .upload-title{
+    font-size: 14px;
   }
 }
 </style>

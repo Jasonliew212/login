@@ -57,7 +57,7 @@ button.clicked {
 }
 
 .country-code-select {
-  height: 34px;
+  height: 32px;
   padding: 0.6rem 0.5rem;
   background-color: #206997;
   color: #CAE6FF;
@@ -103,7 +103,7 @@ button.clicked {
 
 .otp-button {
   padding-block: 8px;
-  background-color: #2563eb;
+  background-color: #1c5c84;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -117,9 +117,6 @@ button.clicked {
   z-index: 2;
 }
 
-.otp-button:hover {
-  background-color: #1d4ed8;
-}
 @media (min-width: 768px) {
   .phone-input2 {
     width: 100%;
@@ -128,6 +125,7 @@ button.clicked {
   .country-code-select{
     font-size: 14px;
     height: auto;
+    max-height: 37px;
   }
   .otp-button{
     font-size: x-small;
